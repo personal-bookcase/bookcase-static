@@ -1,0 +1,25 @@
+{
+  "name": "bookcase-static",
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp",
+    "start": "./node_modules/.bin/gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/personal-bookcase/bookcase-static.git"
+  },
+  "authors": [
+    "Nikita Pakhomov",
+    "Alena Pakhomova"
+  ],
+  "bugs": {
+    "url": "https://github.com/personal-bookcase/bookcase-static/issues"
+  },
+  "homepage": "https://github.com/personal-bookcase/bookcase-static#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
