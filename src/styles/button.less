@@ -1,0 +1,56 @@
+.button() {
+   display: block;
+   text-decoration: none;
+   text-align: center;
+}
+
+.button-type-one {
+    .button;
+    border-radius: @radius;
+    color: @black;
+    border: @radius solid @light-grey;
+    width: 166px;
+    height: 35px;
+    line-height: 35px;
+    font-size: @fsize-s;
+    transition: all 0.1s ease;
+    
+    
+    &:hover {
+        background-color: @brown;
+        border: @radius solid @brown;
+        color: @white;
+       transition: all 0.1s ease;
+    }
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.button_bottom {
+    position: absolute;
+    bottom: 50px;
+}
+
+.button-type-two {
+    .button;
+    border-radius: @radius;
+    max-width: 900px;
+    height: 55px;
+    line-height: 55px;
+    background-color: @light-grey;
+    color: @white;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: darken(@light-grey, 5%);
+          transition: all 0.3s ease;
+    }
+    &:active {
+        transform: translateY(1px);
+    }
+    
+}
+.button-type-two_mar {
+    margin: 0 auto 50px auto;
+}

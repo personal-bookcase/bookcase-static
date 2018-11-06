@@ -1,16 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookcase | Your library</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="assets/icons/Logo_xs.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icons/Logo_xs.png" type="image/x-icon">
 </head>
+
 <body>
-    <h1>Alena puka!!!</h1>
-    <h2>Alena puka 2!!!</h2>
-    <img src="./assets/img/puka.jpg" alt="Puka" />
-    <a href="./pages/page1.html">Page 1</a>
+    <div class="layout">
+        <header class="header layout__container">
+            <nav class="header__nav layout__container_center">
+                <div class="header__logo-wrap">
+                    <a class="header__logo" href="index.html">
+                        <img class="header__logo-img" src="assets/icons/Logo_bookcase.svg" alt="logotype"></a>
+                </div>
+
+                <form class="search-main menu_mar_b" action="/echo" method="post">
+                    <input class="search-main__input" type="search" name="search" placeholder="Book title">
+                    <button class="search-main__button">
+            <i class="fab fa-sistrix search-main_mod"></i>
+       </button>
+                </form>
+
+                <ul class="header__menu header__menu_mar">
+                    <li class="header__menu-item"><a class="header__link" href="#">Сategories<i class="fas fa-caret-down"></i></a>
+                     <div class="header__dropdown layout__dropdown">
+                <!-- column 1-->
+                <ul class="header__dropdown-list layout__dropdown-list">
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link header__dropdown-link_active" href="#">All Categories</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Biographies & Memoirs</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Business & Money</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Calendars</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Children's Books</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Christian Books & Bibles</a>
+                    </li>
+                </ul>
+                <!-- column 2-->
+                <ul class="header__dropdown-list layout__dropdown-list">
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Comics & Graphic Novels</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Computers & Technology</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Cookbooks, Food & Wine</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Crafts, Hobbies & Home</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Education & Teaching</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Engineering & Transportation</a>
+                    </li>
+                </ul>
+                <!-- column 3-->
+                <ul class="header__dropdown-list layout__dropdown-list">
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Health, Fitness & Dieting</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">History</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Humor & Entertainment</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Law</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Lesbian, Gay, Bisexual & Transgender</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Travel</a>
+                    </li>
+                </ul>
+                <!-- column 4-->
+                <ul class="header__dropdown-list layout__dropdown-list">
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Literature & Fiction</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Medical Books</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Mystery, Thriller & Suspense
+</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Parenting & Relationships</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Politics & Social Sciences</a>
+                    </li>
+                    <li class="header__dropdown-item">
+                        <a class="header__dropdown-link" href="#">Reference</a>
+                    </li>
+                </ul>
+            </div>
+                    </li>
+                    <li class="header__menu-item"><a class="header__link" href="#">Add book<i class="fas fa-plus"></i></a></li>
+                     </ul>
+                   </nav>                          
+        </header>
+        
+      <!-- start main-->  
+        <main class="main layout__container-main">
+            <div class="layout__container_center">
+            
+                <div class="navigation navigation_mar_t">
+                <p class="navigation__item">
+                    <span class="navigation__crumb">Categories</span>
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="navigation__crumb">All Categories</span>
+                </p>
+            </div>
+                
+            <h1 class="main-title">All Categories <span class="main-title__found">4 books</span></h1>
+
+            <ul class="sort-list">
+                <li class="sort-list__item">Sort by:</li>
+                <li class="sort-list__item"><a class="sort-list__link" href="#">title</a>
+                    <a href="#" class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a>
+                </li>
+                <li class="sort-list__item"><a class="sort-list__link" href="#">author</a><a href="#" class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a></li>
+                <li class="sort-list__item"><a class="sort-list__link" href="#">year of publication</a><a href="#" class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a></li>
+            </ul>
+
+            <div class="bookcards-wrap bookcards_margin">
+                       <!-- card 1-->
+                    <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                        <img class="bookcard__img" src="assets/img/45tatu.jpg" alt="book cover">
+                    </div>
+                    <div class="bookcard__container">
+                        <h3 class="bookcard__title">Benjamin Franklin: An American Life</h3>
+                        <p class="bookcard__author">by Walter Isaacson</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+                <!-- card 2-->
+                
+                <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                       <img class="bookcard__img" src="assets/img/akunin.jpg" alt="book cover">
+                    </div>
+                     <div class="bookcard__container">
+                        <h3 class="bookcard__title">God Found Us You</h3>
+                        <p class="bookcard__author">by Lisa Tawn Bergren and 
+Laura J. Bryant</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+                <!-- card 3-->
+                <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                        <img class="bookcard__img" src="assets/img/vedma.jpg" alt="book cover">
+                    </div>
+                     <div class="bookcard__container">
+                        <h3 class="bookcard__title">The Ramayana: A Shortened Modern Prose Version of the Indian Epic</h3>
+                        <p class="bookcard__author">by Walter Isaacson</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+                <!-- card 4-->
+                <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                        <img class="bookcard__img" src="assets/img/sila.jpg" alt="book cover">
+                    </div>
+                     <div class="bookcard__container">
+                        <h3 class="bookcard__title">The Annotated Pride and Prejudice </h3>
+                        <p class="bookcard__author">by Jane Austen and David 
+M. Shapard</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+              <!-- card 1-->
+                    <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                        <img class="bookcard__img" src="assets/img/45tatu.jpg" alt="book cover">
+                    </div>
+                    <div class="bookcard__container">
+                        <h3 class="bookcard__title">Benjamin Franklin: An American Life</h3>
+                        <p class="bookcard__author">by Walter Isaacson</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+                <!-- card 2-->
+                
+                <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                       <img class="bookcard__img" src="assets/img/akunin.jpg" alt="book cover">
+                    </div>
+                     <div class="bookcard__container">
+                        <h3 class="bookcard__title">God Found Us You</h3>
+                        <p class="bookcard__author">by Lisa Tawn Bergren and 
+Laura J. Bryant</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+                <!-- card 3-->
+                <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                        <img class="bookcard__img" src="assets/img/vedma.jpg" alt="book cover">
+                    </div>
+                     <div class="bookcard__container">
+                        <h3 class="bookcard__title">The Ramayana: A Shortened Modern Prose Version of the Indian Epic</h3>
+                        <p class="bookcard__author">by Walter Isaacson</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+                <!-- card 4-->
+                <div class="bookcard">
+                    <div class="bookcard__img-wrap">
+                        <img class="bookcard__img" src="assets/img/sila.jpg" alt="book cover">
+                    </div>
+                     <div class="bookcard__container">
+                        <h3 class="bookcard__title">The Annotated Pride and Prejudice </h3>
+                        <p class="bookcard__author">by Jane Austen and David 
+M. Shapard</p>
+                        <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
+                        <a class="button-type-one button_bottom" href="#">Details</a>
+                    </div>
+                </div>
+            </div>
+                <a class="button-type-two button-type-two_mar" href="#">Load more ...</a>
+                
+                </div>
+        </main>
+<!-- end main-->  
+
+        <footer class="footer layout__container">
+            <div class="layout__container_center">
+            <p class="footer__text"> <i class="far fa-copyright"></i> 2018 Bookcase</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/all.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,147 @@
+//mods
+.menu_mar_b {
+    margin-bottom: 11px;
+    margin-left: 15px;
+}
+.header__menu_mar {
+    margin-left: 20px;
+}
+  
+//header
+.header {
+    background-color: @bg-comp;
+    position: relative;
+    
+    &__logo-wrap {
+        position: relative;
+        width: 153px;  
+    }
+
+    &__logo {
+    position: absolute;
+        top:-100px;
+        left:0;
+    width: 144px;
+    height: 144px;
+        background-color: @bg-comp;
+        border-radius: 50%;
+        z-index: 100;
+}
+    
+    &__logo-img {
+        width: 122px;
+        height: auto;
+        object-fit: contain;
+        margin-left: 11px;
+        margin-top: 11px;    
+    }
+    
+    &__nav {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.search-main {
+    flex-grow: 1;
+}
+
+.header__menu {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    list-style: none;
+    
+    &-item:hover .header__link {
+    background: @bg-gg;
+    color: @white;
+    border-bottom: 4px solid @orange;
+    transition: all 0.1s ease;
+    }
+   &-item:hover .layout__dropdown {
+        display: grid;
+    }
+    
+  }
+
+.header__link {
+    display: block;
+    width: 116px;
+    text-align: center;
+    align-self: flex-end;
+    padding-bottom: 7px;
+    padding-top: 59px;
+    color: @light-grey;
+    text-decoration: none;
+    border-bottom: 4px solid @bg-comp;
+    transition: all 0.1s ease;
+    
+     
+    .fa-caret-down {
+        padding-left: 3px;
+    }
+    .fa-plus {
+        padding-left: 6px;
+    }
+    
+}
+
+//submenu
+.header__dropdown {
+    position: absolute;
+    top: 100%;
+    background: @bg-comp;
+    width: 100%;
+    z-index: 20;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    
+    &-list {
+        list-style: none;
+        padding-right: 10px;
+    }
+    &-item {
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+    
+    &-link{
+        font-family: @font-r;
+        font-size: @fsize-s;
+        text-decoration: none;
+        color: @light-grey;
+        position: relative;
+        
+    }
+    &-link::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: @dark-grey;
+        border-radius: 50%;
+        position: absolute;
+        top: 4px;
+        left: -20px;
+         
+    }
+    &-item:hover &-link{
+        color: @white;
+    }
+    &-item:hover &-link::before{
+        background-color: @orange;
+    }
+     &-item:active &-link{
+        opacity: 0.6;
+    }
+    
+}
+.header__dropdown-link_active {
+    color: @white;
+}
+.header__dropdown-link_active.header__dropdown-link::before{
+    background-color: @orange;
+}
+
+
+
+
