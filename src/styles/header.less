@@ -1,41 +1,79 @@
+//animation
+@keyframes display_none {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: grid;
+        opacity: 0;
+    }
+
+    100% {
+        display: grid;
+        opacity: 1;
+    }
+}
+
+@keyframes translate {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 1;
+        transform: translateX(100px);
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 //mods
 .menu_mar_b {
     margin-bottom: 11px;
     margin-left: 15px;
 }
+
 .header__menu_mar {
     margin-left: 20px;
 }
-  
+
 //header
 .header {
     background-color: @bg-comp;
     position: relative;
-    
+
     &__logo-wrap {
         position: relative;
-        width: 153px;  
+        width: 153px;
     }
 
     &__logo {
-    position: absolute;
-        top:-100px;
-        left:0;
-    width: 144px;
-    height: 144px;
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 144px;
+        height: 144px;
         background-color: @bg-comp;
         border-radius: 50%;
         z-index: 100;
-}
-    
+    }
+
     &__logo-img {
         width: 122px;
         height: auto;
         object-fit: contain;
         margin-left: 11px;
-        margin-top: 11px;    
+        margin-top: 11px;
     }
-    
+
     &__nav {
         display: flex;
         align-items: flex-end;
@@ -51,18 +89,28 @@
     display: flex;
     align-items: stretch;
     list-style: none;
-    
+
     &-item:hover .header__link {
-    background: @bg-gg;
-    color: @white;
-    border-bottom: 4px solid @orange;
-    transition: all 0.1s ease;
+        background: @bg-gg;
+        color: @white;
+        border-bottom: 4px solid @orange;
+        transition: @transition_1;
     }
-   &-item:hover .layout__dropdown {
+    &-item:hover .layout__dropdown {
         display: grid;
+        animation-name: display_none;
+        animation-duration: 0.1s;
+
     }
-    
-  }
+    &-item:hover .header__dropdown-list {
+        animation-name: translate;
+        animation-duration: 0.8s;
+        transform: translateX(0px);
+
+    }
+}
+
+
 
 .header__link {
     display: block;
@@ -75,15 +123,16 @@
     text-decoration: none;
     border-bottom: 4px solid @bg-comp;
     transition: all 0.1s ease;
-    
-     
+     background-color: @bg-comp;
+
+
     .fa-caret-down {
         padding-left: 3px;
     }
     .fa-plus {
         padding-left: 6px;
     }
-    
+
 }
 
 //submenu
@@ -95,23 +144,24 @@
     z-index: 20;
     padding-top: 70px;
     padding-bottom: 60px;
-    
+
     &-list {
         list-style: none;
         padding-right: 10px;
     }
+
     &-item {
         padding-bottom: 20px;
         padding-left: 20px;
     }
-    
-    &-link{
+
+    &-link {
         font-family: @font-r;
         font-size: @fsize-s;
         text-decoration: none;
         color: @light-grey;
         position: relative;
-        
+
     }
     &-link::before {
         content: "";
@@ -122,26 +172,146 @@
         position: absolute;
         top: 4px;
         left: -20px;
-         
+
     }
-    &-item:hover &-link{
+    &-item:hover &-link {
         color: @white;
     }
-    &-item:hover &-link::before{
+    &-item:hover &-link::before {
         background-color: @orange;
     }
-     &-item:active &-link{
+    &-item:active &-link {
         opacity: 0.6;
     }
-    
+
 }
+
 .header__dropdown-link_active {
     color: @white;
 }
-.header__dropdown-link_active.header__dropdown-link::before{
+
+.header__dropdown-link_active.header__dropdown-link::before {
     background-color: @orange;
 }
 
+.header-burger__checkbox {
+        display: none;
+    }
+//mobile version
 
 
+@media all and (max-width: 875px) {
+    
+    .layout {
 
+        grid-template-rows: 110px 1fr auto;
+    }
+
+    .header {
+        &__logo-wrap {
+            width: 95px;
+            height: 95px;
+        }
+
+        &__logo {
+            top: 0px;
+            width: 96px;
+            height: 99px;
+
+        }
+
+        &__logo-img {
+            width: 95px;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        &__nav {
+            align-items: center;
+        }
+
+    }
+
+    .header__menu {
+        display: none;
+    }
+    .menu_mar_b {
+        margin-bottom: 0px;
+    } 
+    
+    //burger
+    
+    .header__burger {
+        cursor: pointer;
+        width: 42px;
+        height: 5px;
+        background-color: @light-grey;
+        display: block;
+        margin: 10px auto;
+        transition: @transition_1;
+    }
+    .header-burger_mar {
+        margin-left: 15px;
+    }
+    
+
+    .header-burger__checkbox:checked + .header-burger .header__burger:nth-child(2){
+  opacity: 0;
+}
+    .header-burger__checkbox:checked + .header-burger .header__burger:nth-child(1) {
+        transform: translateY(15px) rotate(45deg);
+    }
+    
+    .header-burger__checkbox:checked + .header-burger .header__burger:nth-child(3) {
+         transform: translateY(-15px) rotate(-45deg);
+    }
+    .header-burger__checkbox:checked ~ .header__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        min-height: 100vh;
+        background-color: @bg-comp;
+        position: absolute;
+        z-index: 100;
+        top: 100%;
+        left: 0;
+    }
+    .header-burger__checkbox:checked ~ .header__menu_mar {
+        margin-left: 0;
+    }
+    
+        
+    .header__link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    align-self: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+    border-left: 4px solid @bg-comp;
+   border-bottom: none;
+}
+    
+    .header__menu-item:hover .header__link {
+        background: @bg-gr;
+        border-left: 4px solid @orange;
+        border-bottom: none;
+    }
+    
+    .header__dropdown {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        position: static;
+        background-color: @bg-comp2;
+          
+    }
+    
+    .layout__dropdown {
+   
+    &-list {
+        grid-column-start: span 12;
+    }
+}
+
+}
