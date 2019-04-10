@@ -7,6 +7,7 @@
     <title>Bookcase | Your library</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/icons/Logo_xs.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/animate.min.css">
 </head>
 
 <body>
@@ -21,11 +22,11 @@
                 <form class="search-main menu_mar_b" action="/echo" method="post">
                     <input class="search-main__input" type="search" name="search" placeholder="Book title">
                     <button class="search-main__button">
-            <i class="fab fa-sistrix search-main_mod"></i>
-       </button>
+                        <i class="fab fa-sistrix search-main_mod"></i>
+                    </button>
                 </form>
                 <!--burger-->
-                
+
                 <input class="header-burger__checkbox" type="checkbox" id="burger">
                 <label class="header-burger header-burger_mar" for="burger">
                     <span class="header__burger"></span>
@@ -39,7 +40,8 @@
                             <!-- column 1-->
                             <ul class="header__dropdown-list layout__dropdown-list">
                                 <li class="header__dropdown-item">
-                                    <a class="header__dropdown-link header__dropdown-link_active" href="#">All Categories</a>
+                                    <a class="header__dropdown-link header__dropdown-link_active" href="#">All
+                                        Categories</a>
                                 </li>
                                 <li class="header__dropdown-item">
                                     <a class="header__dropdown-link" href="#">Biographies & Memoirs</a>
@@ -109,7 +111,7 @@
                                 </li>
                                 <li class="header__dropdown-item">
                                     <a class="header__dropdown-link" href="#">Mystery, Thriller & Suspense
-</a>
+                                    </a>
                                 </li>
                                 <li class="header__dropdown-item">
                                     <a class="header__dropdown-link" href="#">Parenting & Relationships</a>
@@ -147,8 +149,10 @@
                     <li class="sort-list__item"><a class="sort-list__link" href="#">title</a>
                         <a href="#" class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a>
                     </li>
-                    <li class="sort-list__item"><a class="sort-list__link" href="#">author</a><a href="#" class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a></li>
-                    <li class="sort-list__item"><a class="sort-list__link" href="#">year of publication</a><a href="#" class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a></li>
+                    <li class="sort-list__item"><a class="sort-list__link" href="#">author</a><a href="#" class="sort-list__fas"><i
+                                class="fas fa-sort-amount-down"></i></a></li>
+                    <li class="sort-list__item"><a class="sort-list__link" href="#">year of publication</a><a href="#"
+                            class="sort-list__fas"><i class="fas fa-sort-amount-down"></i></a></li>
                 </ul>
 
                 <div class="bookcards-wrap bookcards_margin">
@@ -169,7 +173,7 @@
                             <h3 class="bookcard__title">Benjamin Franklin: An American Life</h3>
                             <p class="bookcard__author">by Walter Isaacson</p>
                             <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
-                            <a class="button-type-one button_bottom" href="#">Details</a>
+                            <a id="book01" class="button-type-one button_bottom" href="#animatedModal">Details</a>
                         </div>
                     </div>
                     <!-- card 2-->
@@ -207,7 +211,8 @@
                             </div>
                         </div>
                         <div class="bookcard__container">
-                            <h3 class="bookcard__title">The Ramayana: A Shortened Modern Prose Version of the Indian Epic</h3>
+                            <h3 class="bookcard__title">The Ramayana: A Shortened Modern Prose Version of the Indian
+                                Epic</h3>
                             <p class="bookcard__author">by Walter Isaacson</p>
                             <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
                             <a class="button-type-one button_bottom" href="#">Details</a>
@@ -288,7 +293,8 @@
                             </div>
                         </div>
                         <div class="bookcard__container">
-                            <h3 class="bookcard__title">The Ramayana: A Shortened Modern Prose Version of the Indian Epic</h3>
+                            <h3 class="bookcard__title">The Ramayana: A Shortened Modern Prose Version of the Indian
+                                Epic</h3>
                             <p class="bookcard__author">by Walter Isaacson</p>
                             <p class="bookcard__year"><i class="fab fa-sticker-mule"></i>2017</p>
                             <a class="button-type-one button_bottom" href="#">Details</a>
@@ -320,18 +326,62 @@
 
 
             </div>
+
+            <!--BOOK01-->
+            <div id="animatedModal">
+                <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+                <div class="close-animatedModal">
+                    CLOSE MODAL
+                </div>
+
+                <div class="modal-content">
+                    <div class="modal-book">
+                        <div class="modal-book__header">
+                            <h1 class="modal-book__title">Benjamin Franklin: An American Life</h1>
+                        </div>
+                        <div class="modal-book__img">
+                            <img class="modal-book__cover" src="../assets/img/ben.jpg" alt="book cover">
+                        </div>
+                        <div class="modal-book__author-year">
+                            <h3 class="modal-book__a-y">Author: <span class="modal-book__a-y-text">Walter Isaacson</span></h3>
+                            <h3 class="modal-book__a-y">Year of publication: <span class="modal-book__a-y-text">2017</span></h3>
+                        </div>
+
+                        <div class="modal-book__text">
+                            <h3 class="modal-book__a-y">Description</h3>
+                            <p class="modal-book__description">Предлагаемая читателю книга содержит избранные сочинения
+                                известного италь­янского анархо-коммуниста, одного из популяризаторов идей анархизма
+                                Эррико Ма­латеста. Центральное место в книге занимает работа "Краткая система
+                                анархизма", написанная в форме десяти бесед. В них автор рассматривает наиболее часто
+                                задаваемые вопросы, ответы на которые раскрывают суть и смысл анархо-коммунистической
+                                теории, и развенчивает мифы об анархизме. Издание также содер­жит ставшие классическими
+                                произведения "Крестьянские речи" и ";Анархизм" и две статьи, в которых автор с
+                                анархистских позиций выступает против демократии. Кроме того, в книгу включена "Наша
+                                программа";, где Э. Малатеста кратко обрисовывает цели и идеалы, за которые борются
+                                анархисты. Книга рекомендуется как специалистам - философам, историкам, политологам,
+                                так и широкому кругу читателей, интересующихся историей анархистского движения.</p>
+                            <a class="modal-book__back-to-list" href="../index.html">Back to list</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </main>
         <!-- end main-->
 
         <footer class="footer layout__container">
             <div class="layout__container_center">
-                <p class="footer__text"> <i class="far fa-copyright"></i> 2018 Bookcase</p>
+                <p class="footer__text"> <i class="far fa-copyright"></i> 2019 Bookcase</p>
             </div>
         </footer>
 
+
     </div>
 
-    <script src="js/all.min.js"></script>
+    <script src="js/all.vendor.js"></script>
+    <script src="js/all.js"></script>
+
 </body>
 
 </html>

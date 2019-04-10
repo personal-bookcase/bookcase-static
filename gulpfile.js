@@ -4,6 +4,7 @@ const gulp = require("gulp");
 const less = require("gulp-less");
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
+const concat = require("gulp-concat");
 
 gulp.task("html", function() {
     return gulp.src("src/**/*.html")
@@ -18,6 +19,11 @@ gulp.task("styles", function() {
                .pipe(gulp.dest("dist/css"));
 });
 
+gulp.task("styles:vendor", function() {
+    return gulp.src("node_modules/animate.css/animate.min.css")
+               .pipe(gulp.dest("dist/css"));
+});
+
 gulp.task("assets", function() {
     return gulp.src("src/assets/**")
                .pipe(gulp.dest("dist/assets"));
@@ -27,16 +33,28 @@ gulp.task("fonts", function() {
     return gulp.src("src/fonts/**")
                .pipe(gulp.dest("dist/fonts"));
 });
- 
+
 gulp.task("js", function() {
-    return gulp.src("node_modules/@fortawesome/fontawesome-free/js/all.min.js")
-               .pipe(gulp.dest("dist/js"));
+    return gulp.src("src/js/**")
+        .pipe(concat("all.js"))
+        .pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("js:vendor", function() {
+    return gulp.src([
+            "node_modules/@fortawesome/fontawesome-free/js/all.min.js", 
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/animatedmodal/animatedModal.min.js"
+        ])
+        .pipe(concat("all.vendor.js"))
+        .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task("watch", function() {
     gulp.watch("src/**/*.html", gulp.series("html"));
     gulp.watch("src/styles/**/*.less", gulp.series("styles"));
     gulp.watch("src/assets/**", gulp.series("assets"));
+    gulp.watch("src/js/**", gulp.series("js"));
 });
 
 gulp.task("serve", function() {
@@ -47,4 +65,4 @@ gulp.task("serve", function() {
     browserSync.watch("dist/**/*.*").on("change", browserSync.reload);
 });
 
-gulp.task("dev", gulp.series("html", "styles", "assets", "fonts", "js", gulp.parallel("watch", "serve"))); 
+gulp.task("dev", gulp.series("html", "styles:vendor", "styles", "assets", "fonts", "js:vendor", "js", gulp.parallel("watch", "serve"))); 

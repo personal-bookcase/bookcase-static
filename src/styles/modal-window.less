@@ -1,0 +1,49 @@
+.modal-book {
+    min-height: 100vh;
+    background: @bg-modal;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 360px) minmax(auto, 920px) 1fr;
+    grid-template-rows: 170px 90px auto;
+    grid-template-areas: ". img header ."
+                        ". img author ."
+                        ". img t-text .";
+    grid-column-gap: 60px;
+        
+}
+.modal-book__header {
+    grid-area: header;
+    margin-top: 90px;
+}
+
+.modal-book__img {
+    grid-area: img;
+    margin-top: 90px;
+}
+
+.modal-book__author-year{
+    grid-area: author;
+}
+
+.modal-book__text{
+    grid-area: t-text;
+}
+
+.modal-book__title {
+    font-size: @fsize-xl;
+    font-family: @font-b;
+    
+    &::after{
+        content: "";
+        background-color: @orange;
+        
+        
+    }
+}
+
+.modal-book__cover {
+    width: 360px;
+    border-radius: 3px;
+    border: 1px solid @grey-text;
+    box-shadow: 10px 15px 30px rgba(153,152,157,0.8);
+    
+} 
