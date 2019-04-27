@@ -55,3 +55,77 @@
     }
 }
 
+//form-add-book
+.form-container {
+    .card-bg();
+    
+    padding: 45px 80px 60px 80px;
+    margin-bottom: 50px;
+}
+
+.form-add-book {
+    font-size: @fsize-s;
+    font-family: @font-r;
+    color: @black;
+    padding-bottom: 20px;
+    
+    &__sp{
+        color: @orange;
+    }
+    &__label {
+        width: 212px;
+        display: inline-block;
+    }
+    &__input {
+    width: 780px;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid @light-grey;
+    color: @black;
+    font-family: @font-r;
+    font-size: @fsize-s;
+    box-sizing: border-box;
+        background-color: @white;
+        padding: 5px 15px;
+        
+    }
+    &__input:focus{
+    outline-style: none;
+    outline-width: 0px !important;
+    outline-color: none !important;
+    border: 1px solid @light-grey;
+    background-color: @bg-card-hover;
+        border-bottom: 1px solid @orange;
+        }
+    &__input::placeholder{
+        color: @light-grey;
+    }
+   
+    &__input_sm {
+        width: 200px;
+    }
+    &__input_ss{
+        width: 109px;
+        margin-left: 15px;
+    }
+    &__input_sl {
+        width: 328px;
+    }
+     &__input_sxl {
+        height: 200px;
+    }
+    .fa-plus {
+        color: @light-grey;
+        font-size: 25px;
+        padding: 10px;
+        border: 1px solid @light-grey;
+        border-radius: 50%;
+      vertical-align: middle;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    &__label_h{
+        vertical-align: top;
+    }
+    
+}

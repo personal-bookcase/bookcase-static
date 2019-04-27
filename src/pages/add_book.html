@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookcase | Your library</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/icons/Logo_xs.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/animate.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <header class="header layout__container">
+            <nav class="header__nav layout__container_center">
+                <div class="header__logo-wrap">
+                    <a class="header__logo" href="../index.html">
+                        <img class="header__logo-img" src="../assets/icons/Logo_bookcase.svg" alt="logotype"></a>
+                </div>
+
+                <form class="search-main menu_mar_b" action="/echo" method="post">
+                    <input class="search-main__input" type="search" name="search" placeholder="Book title">
+                    <button class="search-main__button">
+                        <i class="fab fa-sistrix search-main_mod"></i>
+                    </button>
+                </form>
+                <!--burger-->
+
+                <input class="header-burger__checkbox" type="checkbox" id="burger">
+                <label class="header-burger header-burger_mar" for="burger">
+                    <span class="header__burger"></span>
+                    <span class="header__burger"></span>
+                    <span class="header__burger"></span>
+                </label>
+                <!-- end burger-->
+                <ul class="header__menu header__menu_mar">
+                    <li class="header__menu-item"><a class="header__link" href="../pages/add_book.html">Add book<i class="fas fa-plus"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="layout__container-main-add">
+        <div class="layout__container_center">
+            <h1 class="main-title main-title_add-book main-title_bb">Add book</h1>
+            <div class="form-container">
+                
+               <form action="/add_book" method="POST">
+                 <p class="form-add-book">
+                   <label class="form-add-book__label" for="title">Title<span class="form-add-book__sp">*</span> </label>
+<input class="form-add-book__input" id="title" type="text" required></p>
+                   <p class="form-add-book">
+                   <label class="form-add-book__label" for="subtitle">Subtitle</label>
+<input class="form-add-book__input" id="subtitle" type="text"></p>
+                    <p class="form-add-book">
+                   <label class="form-add-book__label" for="author">Author<span class="form-add-book__sp">*</span></label>
+<input class="form-add-book__input" id="author" type="text" required></p>
+                   
+                      <p class="form-add-book">
+                   <label class="form-add-book__label" for="published">Published<span class="form-add-book__sp">*</span></label>
+<select class="form-add-book__input form-add-book__input_sm" id="published" required placeholder="Month">
+    <option>January</option>
+  <option>February</option>
+  <option>March</option>
+  <option>April</option>
+  <option>May</option>
+  <option>June</option>
+  <option>July</option>
+  <option>August</option>
+  <option>September</option>
+  <option>October</option>
+  <option>November</option>
+  <option>December</option>
+</select>        
+         <input class="form-add-book__input form-add-book__input_ss" type="text" placeholder="year" required></p>          
+                    <p class="form-add-book">
+                   <label class="form-add-book__label" for="categories">Categories<span class="form-add-book__sp">*</span></label>
+                   <input class="form-add-book__input form-add-book__input_sl" id="categories" type="text" placeholder="Add category" required><i class="fas fa-plus"></i></p>          
+                    
+                    <p class="form-add-book">
+                   <label class="form-add-book__label" for="type">Type</label>
+                   <select class="form-add-book__input form-add-book__input_sm" id="type">
+  <option>Electronic</option>
+  <option>Paper</option>
+                        </select>
+                   </p>  
+                   <p class="form-add-book">
+                   <label class="form-add-book__label" for="publisher">Publisher</label>
+                   <input class="form-add-book__input" id="publisher" type="text"></p>     <p class="form-add-book">
+                   <label class="form-add-book__label" for="pages_count">Pages Count</label>
+                   <input class="form-add-book__input form-add-book__input_sm" id="pages_count" type="text"></p>
+                    <p class="form-add-book">
+                   <label class="form-add-book__label" for="edition_number">Edition Number</label>
+                   <input class="form-add-book__input form-add-book__input_sm" id="edition_number" type="text"></p>
+               <p class="form-add-book">
+                   <label class="form-add-book__label" for="cycle">Cycle</label>
+                   <input class="form-add-book__input" id="cycle" type="text"></p>
+                      <p class="form-add-book">
+                   <label class="form-add-book__label" for="language">Language</label>
+                   <select class="form-add-book__input form-add-book__input_sm" id="language">
+  <option>RUS</option>
+  <option>ENG</option>
+                        </select>
+                   </p>  
+                   
+                   <p class="form-add-book">
+                   <label class="form-add-book__label" for="ISBN">ISBN</label>
+                   <input class="form-add-book__input" id="ISBN" type="text"></p>
+                   <p class="form-add-book">
+                   <label class="form-add-book__label form-add-book__label_h" for="description">Description<span class="form-add-book__sp">*</span></label>
+                  <textarea class="form-add-book__input form-add-book__input_sxl" id="description"></textarea></p>
+                   <p class="form-add-book"><span class="form-add-book__label">Вook cover<span class="form-add-book__sp">*</span></span><a class="button-type-download" href="#"><i class="fas fa-camera"></i>Download</a></p>
+                   
+                   <button class="button-type-save button-type-save_mar">
+                        SAVE
+                    </button>
+                </form>
+                
+                
+            </div>
+            </div>
+            
+        
+        </main>
+        
+                <footer class="footer layout__container">
+            <div class="layout__container_center">
+                <p class="footer__text"> <i class="far fa-copyright"></i> 2019 Bookcase</p>
+            </div>
+        </footer>
+    </div>
+     <script src="../js/all.vendor.js"></script>
+    <script src="../js/all.js"></script>
+</body>
+</html>

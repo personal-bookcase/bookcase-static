@@ -11,7 +11,7 @@
 @mac: 1280px;
 
 
-
+//index
 .layout {
     width: 100%;
     min-height: 100vh;
@@ -31,23 +31,21 @@
     grid-column-gap: @gap-s;
   }
 
+.layout__container-main-search {
+     grid-column: span 3;
+}
+
 .layout__container_center {
     grid-column: 2/ span 1;
 }
 
+//add_book
 
-.layout__dropdown {
-    display: none;
-    //display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    padding-left: @gap-s;
-    padding-right: @gap-s;
-
-    &-list {
-        grid-column-start: span 3;
-    }
+.layout__container-main-add {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+    grid-column-gap: @gap-s;
 }
-
 
 
 //media
@@ -56,10 +54,7 @@
     .layout__container-main {
         grid-column-gap: @gap-m;
     }
-    .layout__dropdown {
-        padding-left: @gap-m;
-        padding-right: @gap-m;
-    }
+   
 }
 
 @media all and (min-width:@ipod) {
@@ -67,10 +62,7 @@
     .layout__container-main {
         grid-column-gap: @gap-l;
     }
-    .layout__dropdown {
-        padding-left: @gap-l;
-        padding-right: @gap-l;
-    }
+    
 }
 
 @media all and (min-width:@mac) {
@@ -78,9 +70,5 @@
     .layout__container-main {
         grid-column-gap: @gap;
     }
-    .layout__dropdown,
-    .layout__container-main {
-        padding-left: @gap;
-        padding-right: @gap;
-    }
+  
 }
